@@ -1,11 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import logo from './logo.svg';
+import './App.css';
 
-import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import NavBar from './Components/Navbar';
+import Home from './Components/home';
+import About from './Components/About';
+import Destination from './Components/Destination';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+
+function App() {
+  return (
+   <>
+    <BrowserRouter>
+    <NavBar/>
+    <Routes> 
+    <Route path='/' element={<Home/>}/>
+      <Route path='/About' element={<About/>}/>
+      <Route path='/Menu' element={<Destination/>}/>
+      
+
+     </Routes>
+    </BrowserRouter>
+   </>
+  );
+}
+
+export default App;
